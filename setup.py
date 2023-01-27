@@ -191,7 +191,9 @@ def Build( type=args[0] ):
 							'bonsu.changelog'],
 		ext_package = 'bonsu.lib',
 		ext_modules = [modprfftw],
-		scripts = scripts,
+		entry_points={
+			'console_scripts': ['bonsu = bonsu.interface.bonsu:main'],
+		},
 		package_data = package_data_dict,
 		data_files = data_files,
 		requires = SETUP_REQUIRES,
